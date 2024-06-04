@@ -6,7 +6,7 @@ const debounce = require('lodash.debounce');
 
 const Search = () => {
 
-  const { setInput, input } = useContext(Context);
+  const { setInput } = useContext(Context);
 
   const debouncedSetInput = useCallback(
     debounce((value:string) => {
@@ -23,10 +23,6 @@ const Search = () => {
       debouncedSetInput.cancel();
     }
   }, [debouncedSetInput])
-
-  useEffect(() => {
-    console.log(input)
-  }, [input])
 
   return (
     <form className={styles.container}>

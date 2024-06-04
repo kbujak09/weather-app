@@ -1,0 +1,22 @@
+@import '../../vars.scss';
+
+.container {
+  color: $primary-text;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  height: 100%;
+  padding: 0 16px;
+}
+.name {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.rain {
+  color: $secondary-text;
+}
+.temp {
+  margin-top: auto;
+  font-size: 48px;
+  font-weight: 500;
+}
