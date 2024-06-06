@@ -6,11 +6,15 @@
   grid-template-rows: min-content min-content 1fr;
   height: 100%;
   padding: 0 16px;
+  position: relative;
 }
 .name {
   font-size: 36px;
   font-weight: 500;
   letter-spacing: 1px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 .rain {
   color: $secondary-text;

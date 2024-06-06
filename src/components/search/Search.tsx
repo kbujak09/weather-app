@@ -1,12 +1,14 @@
-import { Context } from '../../contexts/context';
 import styles from './search.module.scss';
 
-import { useCallback, useContext, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 const debounce = require('lodash.debounce');
 
-const Search = () => {
+interface SearchProps {
+  input: string,
+  setInput: (input: string) => void
+}
 
-  const { setInput } = useContext(Context);
+const Search: React.FC<SearchProps> = ({setInput, input}) => {
 
   const debouncedSetInput = useCallback(
     debounce((value:string) => {
