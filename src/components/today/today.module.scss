@@ -1,0 +1,16 @@
+@import '../../vars.scss';
+
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 22px;
+  color: $secondary-text;
+}
+.title {
+  letter-spacing: 0.5px;
+}
+.data {
+  display: flex;
+  justify-content: space-around;
+}

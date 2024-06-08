@@ -28,7 +28,12 @@ const Search: React.FC<SearchProps> = ({setInput, input}) => {
 
   return (
     <form className={styles.container}>
-      <input onChange={handleChange} className={styles.input} type="text" />
+      <input 
+        onChange={handleChange} 
+        className={styles.input} 
+        type="text"
+        placeholder='Search for cities' 
+        />
     </form>
   )
 }

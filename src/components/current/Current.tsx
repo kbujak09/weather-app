@@ -2,12 +2,10 @@ import styles from './current.module.scss';
 import { CurrentInterface } from '../../@types/types';
 
 interface CurrentProps {
-  data: CurrentInterface
+  data: CurrentInterface | null
 }
 
 const Current: React.FC<CurrentProps> = ({data}) => { 
-
-  const weatherData = data as CurrentInterface;
 
   if (!data || Object.keys(data).length === 0) {
     return <div>Loading...</div>
@@ -16,16 +14,16 @@ const Current: React.FC<CurrentProps> = ({data}) => {
   return (
     <div className={styles.container}>
       <div className={styles.name}>
-        {weatherData.location.name}
+        {data.name}
         <div className={styles.image}>
-          <img src={weatherData.current.condition.icon} alt="current condition" />
+          <img src={data.icon} alt="current condition" />
         </div>
       </div>
       <div className={styles.rain}>
-        Chance of rain: {weatherData.forecast.forecastday[0].day.daily_chance_of_rain}%
+        Chance of rain: {data.daily_chance_of_rain}%
       </div>
       <div className={styles.temp}>
-        {weatherData.current.temp_c}°C
+        {data.temp_c}°C
       </div>
     </div>
   )

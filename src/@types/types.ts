@@ -14,22 +14,14 @@ export interface InputInterface {
 }
 
 export interface CurrentInterface {
-  location: {
     name: string,
-  },
-  current: {
     temp_c: number,
-    condition: {
-      icon: string,
-    },
-  },
-  forecast: {
-    forecastday: [
-      {
-        day: {
-          daily_chance_of_rain: number 
-        }
-      }
-    ]
-  }
+    icon: string,
+    daily_chance_of_rain: number 
 };
+
+export interface HourInterface {
+  time: string,
+  icon: string,
+  temp_c: number
+}
