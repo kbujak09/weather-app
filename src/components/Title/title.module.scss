@@ -1,0 +1,13 @@
+@import '../../vars.scss';
+
+.container {
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    color: $accent;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+}

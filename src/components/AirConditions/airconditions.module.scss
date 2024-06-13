@@ -16,3 +16,9 @@
   margin: 16px 0;
   align-items: center;
 }
+@media (max-width: 1199px) {
+  .data {
+    gap: 24px;
+    justify-items: center;
+  }
+}

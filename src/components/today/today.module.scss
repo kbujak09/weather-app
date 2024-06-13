@@ -11,3 +11,10 @@
   flex: 1;
   margin: 16px 0;
 }
+
+@media (max-width: 1199px) {
+  .data {
+    flex-wrap: wrap;
+    gap: 36px;
+  }
+}

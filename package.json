@@ -1,5 +1,6 @@
 {
-  "name": "untitled",
+  "name": "weather-app",
+  "homepage": "https://kbujak09.github.io/weather-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "dotenv": "^16.4.5",
+    "gh-pages": "^6.1.1",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
     "react": "^18.3.1",
@@ -26,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

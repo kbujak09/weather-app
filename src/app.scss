@@ -13,8 +13,9 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh;
+  height: 100vh;
   background-color: #3E4756;
+  overflow-x: hidden;
 }
 .App {
   height: 800px;
@@ -23,12 +24,12 @@ html, body {
   grid-template-rows: 1fr 6fr 6fr 6fr;
   grid-template-columns: 1fr 12fr 8fr;
   gap: 16px;
-  padding: 24px;
+  padding: 16px;
   box-sizing: border-box;
   background-color: $background;
   border-radius: 8px;
 }
-.menu, .search, .current, .today, .future, .air {
+.menu, .search, .current, .today, .forecast, .air {
   border-radius: 8px;
   padding: 16px;
 }
@@ -48,19 +49,13 @@ html, body {
 .today {
   grid-row: 3 / 4;
   grid-column: 2 / 3;
-  background-color: $background-light;
-  color: $secondary-text;
 }
 .air {
   grid-row: 4 / 5;
-  background-color: $background-light;
-  color: $secondary-text;
 }
-.future {
+.forecast {
   grid-row: 2 / 5;
   grid-column: 3 / 4;  
-  background-color: $background-light;
-  color: $secondary-text;
 }
 .error, .loader {
   grid-row: 2 / 5;
@@ -70,6 +65,10 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+.menu, .today, .air, .forecast {
+  background-color: $background-light;
+  color: $secondary-text;
+}
 .loader {
   opacity: 0.75;
 }
@@ -77,4 +76,36 @@ html, body {
   color: red;
   font-size: 18px;
   letter-spacing: 0.5px;
+}
+@media (max-width: 1199px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    padding: 0;
+    padding: 16px;
+    height: inherit
+  }
+  #root {
+    display: block;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: $background;
+  }
+  .menu, .search, .current, .today, .forecast, .air {
+    border-radius: 0px;
+    padding: 0px;
+    background-color: $background;
+  }
+  .menu {
+    display: none;
+  }
+  .current, .today, .forecast, .air {
+    padding-bottom: 32px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1199px)  {
+  .App {
+    padding: 48px 128px;
+  }
 }

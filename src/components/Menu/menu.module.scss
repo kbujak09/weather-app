@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+}
+.container > img {
+  width: 100%;
+  filter: brightness(0) saturate(100%) invert(95%) sepia(100%) saturate(14%) hue-rotate(213deg) brightness(104%) contrast(104%);
+}

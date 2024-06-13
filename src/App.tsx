@@ -5,6 +5,7 @@ import { CurrentInterface, HourInterface, AirInterface, ForecastInterface } from
 import Today from './components/Today/Today';
 import AirConditions from './components/AirConditions/AirConditions';
 import Forecast from './components/Forecast/Forecast';
+import Menu from './components/Menu/Menu';
 
 import { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
@@ -130,7 +131,9 @@ const App = () => {
 
   return (
     <div className="App">
-        <div className="menu"></div>
+        <div className="menu">
+          <Menu />
+        </div>
         <div className="search">
           <Search setInput={setInput}/>
         </div>
@@ -151,7 +154,7 @@ const App = () => {
           <div className="air">
             <AirConditions data={airData}/>
           </div>
-          <div className="future">
+          <div className="forecast">
             <Forecast data={ForecastData}/>
           </div>
         </> 

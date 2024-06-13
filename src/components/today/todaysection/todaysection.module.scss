@@ -19,3 +19,9 @@
 .container:last-child {
   border-right: none;
 }
+@media (max-width: 1199px) {
+  .container {
+    border: 0;
+    padding: 0;
+  }
+}
