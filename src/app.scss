@@ -21,21 +21,20 @@ html, body {
   width: 1200px;
   display: grid;
   grid-template-rows: 1fr 6fr 6fr 6fr;
-  grid-template-columns: 1fr 8fr 3fr;
+  grid-template-columns: 1fr 12fr 8fr;
   gap: 16px;
   padding: 24px;
   box-sizing: border-box;
   background-color: $background;
   border-radius: 8px;
 }
-.menu, .search, .current, .today, .week {
+.menu, .search, .current, .today, .future, .air {
   border-radius: 8px;
   padding: 16px;
 }
 .menu {
   grid-row: 1 / 5;
   grid-column: 1 / 1;
-  background-color: $background-light;
 }
 .search {
   grid-row: 1 / 2;
@@ -50,13 +49,32 @@ html, body {
   grid-row: 3 / 4;
   grid-column: 2 / 3;
   background-color: $background-light;
+  color: $secondary-text;
 }
 .air {
   grid-row: 4 / 5;
   background-color: $background-light;
+  color: $secondary-text;
 }
-.week {
+.future {
   grid-row: 2 / 5;
   grid-column: 3 / 4;  
   background-color: $background-light;
+  color: $secondary-text;
+}
+.error, .loader {
+  grid-row: 2 / 5;
+  grid-column: 2 / 4;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  opacity: 0.75;
+}
+.errorText {
+  color: red;
+  font-size: 18px;
+  letter-spacing: 0.5px;
 }

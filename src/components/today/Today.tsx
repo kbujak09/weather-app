@@ -1,6 +1,7 @@
 import styles from './today.module.scss';
 import { HourInterface } from '../../@types/types';
-import TodaySection from './todaysection/TodaySection';
+import TodaySection from './TodaySection/TodaySection';
+import Title from '../Title/Title';
 
 interface TodayProps {
   data: HourInterface[] | null
@@ -12,9 +13,7 @@ const Today: React.FC<TodayProps> = ({data}) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        TODAY'S FORECAST
-      </div>
+      <Title text={"TODAY'S FORECAST"}/>
       <div className={styles.data}>
           { 
             data && data.map((item: HourInterface) => {

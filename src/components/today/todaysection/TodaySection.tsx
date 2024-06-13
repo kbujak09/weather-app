@@ -6,9 +6,6 @@ interface TodaySectionProps {
 }
 
 const TodaySection: React.FC<TodaySectionProps> = ({data}) => {
-
-  console.log(data);
-
   return (
     data && <div className={styles.container}>
       <div className={styles.hour}>{data.time}</div>

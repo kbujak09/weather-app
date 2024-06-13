@@ -1,23 +1,30 @@
 import styles from './search.module.scss';
 
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 const debounce = require('lodash.debounce');
 
 interface SearchProps {
-  input: string,
   setInput: (input: string) => void
 }
 
-const Search: React.FC<SearchProps> = ({setInput, input}) => {
+const Search: React.FC<SearchProps> = ({setInput}) => {
+
+  const [localInput, setLocalInput] = useState<string>('');
 
   const debouncedSetInput = useCallback(
     debounce((value:string) => {
       setInput(value);
-    }, 1000), []
+    }, 1000), [setInput]
   );
 
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setLocalInput(e.target.value);
     debouncedSetInput(e.target.value);
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setInput(localInput);
   }
 
   useEffect(() => {
@@ -27,7 +34,7 @@ const Search: React.FC<SearchProps> = ({setInput, input}) => {
   }, [debouncedSetInput])
 
   return (
-    <form className={styles.container}>
+    <form onSubmit={handleSubmit} className={styles.container}>
       <input 
         onChange={handleChange} 
         className={styles.input} 

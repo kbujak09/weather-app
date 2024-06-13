@@ -1,0 +1,48 @@
+@import '../../../vars.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 2px solid $background;
+  padding-bottom: 24px;
+}
+.container:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.icon > img {
+  width: 48px;
+}
+.condition {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.text, .maxTemp, .date {
+  color: $primary-text;
+}
+.temps {
+  display: flex;
+  gap: 4px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 16px;
+}
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.gridItemValue {
+  color: $primary-text;
+}

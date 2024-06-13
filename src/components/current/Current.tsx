@@ -7,12 +7,8 @@ interface CurrentProps {
 
 const Current: React.FC<CurrentProps> = ({data}) => { 
 
-  if (!data || Object.keys(data).length === 0) {
-    return <div>Loading...</div>
-  }
-
   return (
-    <div className={styles.container}>
+    data && <div className={styles.container}>
       <div className={styles.name}>
         {data.name}
         <div className={styles.image}>
@@ -23,7 +19,7 @@ const Current: React.FC<CurrentProps> = ({data}) => {
         Chance of rain: {data.daily_chance_of_rain}%
       </div>
       <div className={styles.temp}>
-        {data.temp_c}°C
+        {Math.round(data.temp_c)}°C
       </div>
     </div>
   )

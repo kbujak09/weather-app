@@ -1,0 +1,13 @@
+@import '../../../vars.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 12px;
+}
+.value {
+  font-size: 20px;
+  color: $primary-text;
+  font-weight: 500;
+}

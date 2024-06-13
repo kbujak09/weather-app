@@ -25,3 +25,24 @@ export interface HourInterface {
   icon: string,
   temp_c: number
 }
+
+export interface AirInterface {
+  name: string,
+  value: string
+}
+
+export interface ForecastInterface {
+  date: string,
+  max_temp_c: number,
+  min_temp_c: number,
+  daily_chance_of_rain: number,
+  condition: {
+    text: string,
+    icon: string
+  },
+  wind: number,
+  uv: number,
+  humidity: number,
+  sun_rise: string,
+  sun_set: string
+}
